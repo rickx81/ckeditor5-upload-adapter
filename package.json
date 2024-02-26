@@ -1,0 +1,40 @@
+{
+  "name": "@rickx/ckeditor5-upload-adapter",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Upload adapter plugin for CKEditor5",
+  "author": "rickx81",
+  "license": "GPL-2.0-or-later",
+  "homepage": "https://github.com/rickx81/ckeditor5-upload-adapter",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rickx81/ckeditor5-upload-adapter.git"
+  },
+  "bugs": "https://github.com/rickx81/ckeditor5-upload-adapter/issues",
+  "main": "src/index.ts",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsc -p ./tsconfig.json",
+    "release": "npm run build && node ./scripts/updatePackageEntryPoint.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "ckeditor5": "40.2.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.6.4",
+    "@ckeditor/ckeditor5-core": "40.2.0",
+    "@ckeditor/ckeditor5-dev-utils": "39.5.0",
+    "@ckeditor/ckeditor5-theme-lark": "40.2.0",
+    "eslint": "^8.56.0",
+    "fs-extra": "^11.2.0",
+    "rimraf": "^5.0.5",
+    "typescript": "~5.3.3"
+  }
+}
