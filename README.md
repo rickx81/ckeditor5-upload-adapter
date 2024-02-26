@@ -45,15 +45,6 @@ ClassicEditor
         text: new Blob(['Another text'], { type: 'text/plain' })
       }
     },
-    // or use CustomUploadAdapter
-    customUpload: {
-      onUpload: (file) => {
-        return Promise.resolve('http://server/default-size.image.png')
-      },
-      onAbort: () => {
-        console.log('Upload abort')
-      }
-    }
   })
   .then(/* ... */)
   .catch(/* ... */)

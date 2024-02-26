@@ -12,11 +12,14 @@ import type { ImageUploadConfig } from './config.js'
  *   .create(document.querySelector('#editor'), {
  *     imageUpload: {
  *       uploadUrl: 'http://example.com',
+ *       withCredentials: true,
  *       headers: {
- *         ...
+ *         'X-CSRF-TOKEN': 'CSRF-Token',
+ *         'Authorization': 'Bearer <JSON Web Token>',
  *       },
  *       params: {
- *         ...
+ *         foo: 'bar',
+ *         text: new Blob(['Another text'], { type: 'text/plain' })
  *       }
  *     }
  *   } )
@@ -40,7 +43,7 @@ export default class ImageUploadAdapter extends Plugin {
       return
 
     if (!options.uploadUrl) {
-      console.warn('custom-upload-adapter-missing-uploadurl')
+      console.warn('image-upload-adapter-missing-uploadurl')
 
       return
     }

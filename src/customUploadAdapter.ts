@@ -8,9 +8,10 @@ import type { CustomUploadConfig } from './config.js'
  * ```ts
  * ClassicEditor
  *   .create(document.querySelector('#editor'), {
- *     hookUpload: {
+ *     customUpload: {
  *       onUpload: (file) => {
  *         // do any upload stuff here with the JS-File-Object
+ *         return Promise.resolve('http://server/default-size.image.png')
  *       },
  *       obAbort: () => {
  *         // abort the upload here. The promise from onImageUpload should be rejected after that.
@@ -37,7 +38,7 @@ export default class CustomUploadAdapter extends Plugin {
       return
 
     if (!options.onUpload) {
-      console.warn('hook-upload-adapter-missing-uploadurl')
+      console.warn('custom-upload-adapter-missing-onupload')
 
       return
     }
