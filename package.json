@@ -25,13 +25,13 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "ckeditor5": "41.0.0"
+    "ckeditor5": "41.1.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.4",
-    "@ckeditor/ckeditor5-core": "41.0.0",
+    "@ckeditor/ckeditor5-core": "41.1.0",
     "@ckeditor/ckeditor5-dev-utils": "^39.6.1",
-    "@ckeditor/ckeditor5-theme-lark": "41.0.0",
+    "@ckeditor/ckeditor5-theme-lark": "41.1.0",
     "eslint": "^8.56.0",
     "fs-extra": "^11.2.0",
     "rimraf": "^5.0.5",
