@@ -1,0 +1,18 @@
+{
+  "plugins": [
+    {
+      "name": "image upload adapter",
+      "className": "imageUploadAdapter",
+      "description": "An image upload tool.",
+      "docs": "",
+      "path": "src/imageUploadAdapter.js"
+    },
+    {
+      "name": "custom upload adapter",
+      "className": "customUploadAdapter",
+      "description": "An image upload tool.",
+      "docs": "",
+      "path": "src/customUploadAdapter.js"
+    }
+  ]
+}
