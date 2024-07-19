@@ -50,7 +50,7 @@
     "lint:fix": "eslint . --fix",
     "start": "ckeditor5-package-tools start",
     "test": "ckeditor5-package-tools test",
-    "prepare": "npm run build:dist",
+    "prepare": "husky && npm run build:dist",
     "prepublishOnly": "npm run ts:build && ckeditor5-package-tools export-package-as-javascript",
     "postpublish": "npm run ts:clear && ckeditor5-package-tools export-package-as-typescript",
     "translations:collect": "ckeditor5-package-tools translations:collect",
