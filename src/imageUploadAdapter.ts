@@ -1,5 +1,6 @@
-import { Plugin } from '@ckeditor/ckeditor5-core'
-import { type FileLoader, FileRepository, type UploadAdapter, type UploadResponse } from 'ckeditor5/src/upload'
+import { Plugin } from 'ckeditor5'
+import { type FileLoader, FileRepository, type UploadAdapter, type UploadResponse } from 'ckeditor5'
+
 import type { ImageUploadConfig } from './config.js'
 
 /**
@@ -19,7 +20,6 @@ import type { ImageUploadConfig } from './config.js'
  *       },
  *       params: {
  *         foo: 'bar',
- *         text: new Blob(['Another text'], { type: 'text/plain' })
  *       }
  *     }
  *   } )

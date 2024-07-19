@@ -4,37 +4,80 @@
   "version": "41.4.0",
   "description": "Upload adapter plugin for CKEditor5",
   "author": "rickx81",
-  "license": "GPL-2.0-or-later",
+  "license": "MIT",
   "homepage": "https://github.com/rickx81/ckeditor5-upload-adapter",
   "repository": {
     "type": "git",
     "url": "https://github.com/rickx81/ckeditor5-upload-adapter.git"
   },
   "bugs": "https://github.com/rickx81/ckeditor5-upload-adapter/issues",
-  "main": "src/index.ts",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
+  "keywords": [
+    "ckeditor",
+    "ckeditor5",
+    "ckeditor 5",
+    "ckeditor-upload",
+    "ckeditor-upload-adapter",
+    "ckeditor5-feature",
+    "ckeditor5-plugin",
+    "ckeditor5-plugin-upload",
+    "ckeditor5-plugin-upload-adapter",
+    "ckeditor5-package-generator"
   ],
-  "scripts": {
-    "prebuild": "rimraf dist",
-    "build": "tsc -p ./tsconfig.json",
-    "release": "npm run build && node ./scripts/updatePackageEntryPoint.js",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./*.css": "./dist/*.css",
+    "./package.json": "./package.json"
   },
-  "dependencies": {
-    "ckeditor5": "<42.0.0"
+  "main": "dist/index.ts",
+  "module": "dist/index.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "ckeditor5-metadata.json",
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8"
+  },
+  "scripts": {
+    "build:dist": "node ./scripts/build-dist.mjs",
+    "ts:build": "tsc -p ./tsconfig.release.json",
+    "ts:clear": "npx rimraf \"src/**/*.@(js|d.ts)\"",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "start": "ckeditor5-package-tools start",
+    "test": "ckeditor5-package-tools test",
+    "prepare": "npm run build:dist",
+    "prepublishOnly": "npm run ts:build && ckeditor5-package-tools export-package-as-javascript",
+    "postpublish": "npm run ts:clear && ckeditor5-package-tools export-package-as-typescript",
+    "translations:collect": "ckeditor5-package-tools translations:collect",
+    "translations:download": "ckeditor5-package-tools translations:download",
+    "translations:upload": "ckeditor5-package-tools translations:upload"
+  },
+  "peerDependencies": {
+    "ckeditor5": ">=42.0.0 || ^0.0.0-nightly"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "~2.21.3",
-    "@ckeditor/ckeditor5-core": "<42.0.0",
-    "@ckeditor/ckeditor5-dev-utils": "^39.9.1",
-    "@ckeditor/ckeditor5-theme-lark": "<42.0.0",
+    "@antfu/eslint-config": "~2.21.0",
+    "@ckeditor/ckeditor5-core": "^42.0.1",
+    "@ckeditor/ckeditor5-dev-build-tools": "40.5.0",
+    "@ckeditor/ckeditor5-inspector": ">=4.1.0",
+    "@ckeditor/ckeditor5-package-tools": "^2.0.0",
+    "@types/chai": "^4.3.1",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^20.14.10",
+    "chalk": "^4.1.2",
+    "ckeditor5": "latest",
     "eslint": "^8.57.0",
-    "fs-extra": "^11.2.0",
-    "rimraf": "^5.0.9",
-    "typescript": "~5.3.3"
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.7",
+    "typescript": "5.0.4",
+    "upath": "^2.0.1"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
   }
 }

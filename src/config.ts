@@ -1,4 +1,4 @@
-import type { UploadResponse } from 'ckeditor5/src/upload'
+import type { UploadResponse } from 'ckeditor5'
 
 /**
  * The configuration of the UploadAdapter
@@ -58,7 +58,6 @@ export interface ImageUploadConfig {
    *     imageUpload: {
    *       params: {
    *         foo: 'bar',
-   *         text: new Blob(["Another text"], { type: "text/plain" })
    *       }
    *     }
    *   });
@@ -100,7 +99,7 @@ export interface ImageUploadConfig {
  *       onUpload: (file) => {
  *         // do any upload stuff here with the JS-File-Object
  *       },
- *       obAbort: () => {
+ *       onAbort: () => {
  *         // abort the upload here. The promise from onImageUpload should be rejected after that.
  *       }
  *     }
@@ -118,7 +117,7 @@ export interface CustomUploadConfig {
    * ClassicEditor
    *   .create(editorElement, {
    *     onUpload: (file) => {
-   *       return Promise.resolve('http://server/default-size.image.png')
+   *       return Promise.resolve({ url: 'http://server/default-size.image.png' })
    *     }
    *   });
    *   .then( ... )
@@ -133,7 +132,7 @@ export interface CustomUploadConfig {
    * ```ts
    * ClassicEditor
    *   .create(editorElement, {
-   *     obAbort: {
+   *     onAbort: () => {
    *       console.log('Upload abort');
    *     }
    *   });

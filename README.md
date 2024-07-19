@@ -1,3 +1,7 @@
+@rickx/ckeditor5-upload-adapter
+============================
+
+This package was created by the [ckeditor5-package-generator](https://www.npmjs.com/package/ckeditor5-package-generator) package.
 # ckeditor5-upload-adapter
 
 The upload adapter plugin for ckeditor5.
@@ -13,6 +17,8 @@ yarn add @rickx/ckeditor5-upload-adapter
 # or
 npm i @rickx/ckeditor5-upload-adapter
 ```
+
+### [How to use your plugin in new installation methods?](https://ckeditor.com/docs/ckeditor5/latest/updating/nim-migration/custom-plugins.html#how-to-use-your-plugin-in-new-installation-methods)
 
 Use ImageUploadAdapter in your application:
 
@@ -42,7 +48,6 @@ ClassicEditor
       // Params sent along with the XMLHttpRequest to the upload server.
       params: {
         foo: 'bar',
-        text: new Blob(['Another text'], { type: 'text/plain' })
       }
     },
   })
@@ -67,7 +72,7 @@ ClassicEditor
     ],
     customUpload: {
       onUpload: (file) => {
-        return Promise.resolve('http://server/default-size.image.png')
+        return Promise.resolve({ url: 'http://server/default-size.image.png' })
       },
       onAbort: () => {
         console.log('Upload abort')
@@ -80,4 +85,4 @@ ClassicEditor
 
 ## License
 
-Licensed under the terms of [GNU General Public License Version 2 or later](http://www.gnu.org/licenses/gpl.html).
+The `@rickx/ckeditor5-upload-adapter` package is available under [MIT license](https://opensource.org/licenses/MIT).

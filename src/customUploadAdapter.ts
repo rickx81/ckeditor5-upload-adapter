@@ -1,5 +1,6 @@
-import { Plugin } from '@ckeditor/ckeditor5-core'
-import { type FileLoader, FileRepository, type UploadAdapter, type UploadResponse } from 'ckeditor5/src/upload'
+import { Plugin } from 'ckeditor5'
+import { type FileLoader, FileRepository, type UploadAdapter, type UploadResponse } from 'ckeditor5'
+
 import type { CustomUploadConfig } from './config.js'
 
 /**
@@ -11,9 +12,9 @@ import type { CustomUploadConfig } from './config.js'
  *     customUpload: {
  *       onUpload: (file) => {
  *         // do any upload stuff here with the JS-File-Object
- *         return Promise.resolve('http://server/default-size.image.png')
+ *         return Promise.resolve({ url: 'http://server/default-size.image.png' })
  *       },
- *       obAbort: () => {
+ *       onAbort: () => {
  *         // abort the upload here. The promise from onImageUpload should be rejected after that.
  *       }
  *     }

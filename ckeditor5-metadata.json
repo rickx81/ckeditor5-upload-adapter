@@ -2,17 +2,15 @@
   "plugins": [
     {
       "name": "image upload adapter",
-      "className": "imageUploadAdapter",
-      "description": "An image upload tool.",
-      "docs": "",
-      "path": "src/imageUploadAdapter.js"
+      "className": "ImageUploadAdapter",
+      "description": "An image upload tool. It allows for uploading images to an application running on your server using the <code>XMLHttpRequest</code> API with a minimal editor configuration.",
+      "path": "src/ImageUploadAdapter.js"
     },
     {
-      "name": "custom upload adapter",
-      "className": "customUploadAdapter",
+      "name": "Custom upload adapter",
+      "className": "CustomUploadAdapter",
       "description": "An image upload tool.",
-      "docs": "",
-      "path": "src/customUploadAdapter.js"
+      "path": "src/CustomUploadAdapter.js"
     }
   ]
 }

@@ -1,4 +1,4 @@
-import type { CustomUploadAdapter, CustomUploadConfig, ImageUploadAdapter, ImageUploadConfig } from './index'
+import type { CustomUploadAdapter, CustomUploadConfig, ImageUploadAdapter, ImageUploadConfig } from './index.js'
 
 declare module '@ckeditor/ckeditor5-core' {
   interface EditorConfig {
@@ -15,6 +15,6 @@ declare module '@ckeditor/ckeditor5-core' {
 
   interface PluginsMap {
     [ImageUploadAdapter.pluginName]: ImageUploadConfig
-    [CustomUploadAdapter.pluginName]: ImageUploadConfig
+    [CustomUploadAdapter.pluginName]: CustomUploadConfig
   }
 }
