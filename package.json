@@ -1,7 +1,7 @@
 {
   "name": "@rickx/ckeditor5-upload-adapter",
   "type": "module",
-  "version": "42.0.0",
+  "version": "42.0.1",
   "description": "Upload adapter plugin for CKEditor5",
   "author": "rickx81",
   "license": "MIT",
@@ -38,10 +38,6 @@
     "ckeditor5-metadata.json",
     "dist"
   ],
-  "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=8"
-  },
   "scripts": {
     "build:dist": "node ./scripts/build-dist.mjs",
     "ts:build": "tsc -p ./tsconfig.release.json",
