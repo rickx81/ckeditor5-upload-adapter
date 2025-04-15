@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-/* eslint-env node */
-
 import { createRequire } from 'node:module'
 import process from 'node:process'
 import upath from 'upath'

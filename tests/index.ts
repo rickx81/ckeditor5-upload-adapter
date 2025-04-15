@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { describe, expect, it } from 'vitest'
 
 import { CustomUploadAdapter as CustomUploadAdapterDll, ImageUploadAdapter as ImageUploadAdapterDll } from '../src/index.js'
 import ImageUploadAdapter from '../src/imageUploadAdapter.js'

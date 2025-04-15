@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { ClassicEditor } from 'ckeditor5'
 
 import { ImageUploadAdapter } from '../src/index.js'
@@ -16,6 +16,7 @@ describe('ImageUploadAdapter', () => {
       document.body.appendChild(domElement)
 
       editor = await ClassicEditor.create(domElement, {
+        licenseKey: 'GPL',
         plugins: [
           ImageUploadAdapter,
         ],

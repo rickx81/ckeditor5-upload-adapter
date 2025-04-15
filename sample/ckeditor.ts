@@ -23,9 +23,11 @@ import {
   TableToolbar,
 } from 'ckeditor5'
 
+import coreTranslations from 'ckeditor5/translations/zh-cn.js'
 import CKEditorInspector from '@ckeditor/ckeditor5-inspector'
 
-import { CustomUploadAdapter, ImageUploadAdapter } from '../src/index.js'
+import { ImageUploadAdapter } from '../src/index.js'
+// import { CustomUploadAdapter } from '../src/index.js'
 
 import 'ckeditor5/ckeditor5.css'
 
@@ -84,6 +86,11 @@ ClassicEditor
       'insertTable',
       'mediaEmbed',
       'codeBlock',
+    ],
+    licenseKey: 'GPL',
+    language: 'zh-CN',
+    translations: [
+      coreTranslations,
     ],
     imageUpload: {
       uploadUrl: 'https://localhost:8081/upload',

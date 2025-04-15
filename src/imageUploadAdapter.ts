@@ -1,5 +1,5 @@
-import { Plugin } from 'ckeditor5'
-import { type FileLoader, FileRepository, type UploadAdapter, type UploadResponse } from 'ckeditor5'
+import { Plugin, FileRepository } from 'ckeditor5'
+import type { FileLoader, UploadAdapter, UploadResponse } from 'ckeditor5'
 
 import type { ImageUploadConfig } from './config.js'
 
